@@ -1,0 +1,57 @@
+{
+  "name": "Schematic",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the gadget/device schematic"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the schematic"
+    },
+    "instructions": {
+      "type": "string",
+      "description": "AI-generated build instructions"
+    },
+    "required_components": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of component names needed"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "novice",
+        "intermediate",
+        "advanced",
+        "mastermind"
+      ],
+      "default": "novice"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "surveillance",
+        "defense",
+        "utility",
+        "transport",
+        "communication",
+        "other"
+      ],
+      "default": "utility"
+    },
+    "component_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "IDs of linked components from inventory"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

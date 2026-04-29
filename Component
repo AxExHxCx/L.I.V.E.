@@ -1,0 +1,75 @@
+{
+  "name": "Component",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name or label of the found component"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the component"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "electronic",
+        "mechanical",
+        "chemical",
+        "structural",
+        "optical",
+        "magnetic",
+        "unknown"
+      ],
+      "default": "unknown",
+      "description": "Category of the component"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "marked",
+        "collected",
+        "cataloged",
+        "deployed"
+      ],
+      "default": "marked",
+      "description": "Current status of the component"
+    },
+    "latitude": {
+      "type": "number",
+      "description": "Latitude of the find location"
+    },
+    "longitude": {
+      "type": "number",
+      "description": "Longitude of the find location"
+    },
+    "location_note": {
+      "type": "string",
+      "description": "Note about the location"
+    },
+    "ai_identification": {
+      "type": "string",
+      "description": "AI-generated identification details"
+    },
+    "potential_uses": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Potential uses identified by AI"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Photo of the component"
+    },
+    "threat_level": {
+      "type": "number",
+      "description": "Usefulness rating 1-5"
+    }
+  },
+  "required": [
+    "name",
+    "latitude",
+    "longitude"
+  ]
+}

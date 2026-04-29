@@ -1,0 +1,57 @@
+{
+  "name": "Minion",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Minion's codename"
+    },
+    "specialty": {
+      "type": "string",
+      "enum": [
+        "infiltration",
+        "engineering",
+        "combat",
+        "recon",
+        "logistics",
+        "hacking"
+      ],
+      "default": "logistics",
+      "description": "Minion's primary skill set"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "idle",
+        "on_mission",
+        "injured",
+        "mia"
+      ],
+      "default": "idle",
+      "description": "Current operational status"
+    },
+    "loyalty": {
+      "type": "number",
+      "description": "Loyalty rating 1-10"
+    },
+    "skill_level": {
+      "type": "number",
+      "description": "Skill rating 1-10"
+    },
+    "current_task": {
+      "type": "string",
+      "description": "Current assigned task"
+    },
+    "task_location": {
+      "type": "string",
+      "description": "Where the minion is deployed"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Field notes about this minion"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

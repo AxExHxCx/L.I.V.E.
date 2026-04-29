@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 6%;
+    --foreground: 160 100% 90%;
+    --card: 240 10% 9%;
+    --card-foreground: 160 60% 85%;
+    --popover: 240 10% 8%;
+    --popover-foreground: 160 60% 85%;
+    --primary: 160 100% 45%;
+    --primary-foreground: 240 10% 4%;
+    --secondary: 270 80% 55%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 8% 14%;
+    --muted-foreground: 160 20% 55%;
+    --accent: 270 80% 55%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 85% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 160 40% 18%;
+    --input: 240 8% 16%;
+    --ring: 160 100% 45%;
+    --chart-1: 160 100% 45%;
+    --chart-2: 270 80% 55%;
+    --chart-3: 45 100% 55%;
+    --chart-4: 0 85% 55%;
+    --chart-5: 200 80% 55%;
+    --radius: 0.5rem;
+    --sidebar-background: 240 10% 7%;
+    --sidebar-foreground: 160 60% 85%;
+    --sidebar-primary: 160 100% 45%;
+    --sidebar-primary-foreground: 240 10% 4%;
+    --sidebar-accent: 240 8% 14%;
+    --sidebar-accent-foreground: 160 60% 85%;
+    --sidebar-border: 160 40% 18%;
+    --sidebar-ring: 160 100% 45%;
+    --font-heading: 'Orbitron', monospace;
+    --font-body: 'Rajdhani', sans-serif;
+  }
+
+  .dark {
+    --background: 240 10% 6%;
+    --foreground: 160 100% 90%;
+    --card: 240 10% 9%;
+    --card-foreground: 160 60% 85%;
+    --popover: 240 10% 8%;
+    --popover-foreground: 160 60% 85%;
+    --primary: 160 100% 45%;
+    --primary-foreground: 240 10% 4%;
+    --secondary: 270 80% 55%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 8% 14%;
+    --muted-foreground: 160 20% 55%;
+    --accent: 270 80% 55%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 85% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 160 40% 18%;
+    --input: 240 8% 16%;
+    --ring: 160 100% 45%;
+    --chart-1: 160 100% 45%;
+    --chart-2: 270 80% 55%;
+    --chart-3: 45 100% 55%;
+    --chart-4: 0 85% 55%;
+    --chart-5: 200 80% 55%;
+    --sidebar-background: 240 10% 7%;
+    --sidebar-foreground: 160 60% 85%;
+    --sidebar-primary: 160 100% 45%;
+    --sidebar-primary-foreground: 240 10% 4%;
+    --sidebar-accent: 240 8% 14%;
+    --sidebar-accent-foreground: 160 60% 85%;
+    --sidebar-border: 160 40% 18%;
+    --sidebar-ring: 160 100% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Leaflet overrides for villain theme */
+.leaflet-container {
+  background: hsl(240 10% 6%) !important;
+}
+.leaflet-tile-pane {
+  filter: saturate(0.3) brightness(0.4) contrast(1.2) hue-rotate(120deg);
+}
+.leaflet-control-zoom a {
+  background: hsl(240 10% 9%) !important;
+  color: hsl(160 100% 45%) !important;
+  border-color: hsl(160 40% 18%) !important;
+}
+.leaflet-control-attribution {
+  display: none !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(240 10% 6%);
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(160 40% 18%);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(160 100% 45%);
+}
+
+/* Pulse animation for markers */
+@keyframes villain-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 hsla(160, 100%, 45%, 0.4); }
+  50% { box-shadow: 0 0 0 12px hsla(160, 100%, 45%, 0); }
+}
+.villain-marker-pulse {
+  animation: villain-pulse 2s infinite;
+}
+
+/* Glitch text effect */
+@keyframes glitch-shift {
+  0%, 100% { text-shadow: 2px 0 hsl(160 100% 45%), -2px 0 hsl(270 80% 55%); }
+  25% { text-shadow: -2px 0 hsl(160 100% 45%), 2px 0 hsl(270 80% 55%); }
+  50% { text-shadow: 2px 2px hsl(160 100% 45%), -2px -2px hsl(270 80% 55%); }
+  75% { text-shadow: -2px 2px hsl(160 100% 45%), 2px -2px hsl(270 80% 55%); }
+}
